@@ -51,6 +51,9 @@
             <plugin>
                 <groupId>io.openliberty.tools</groupId>
                 <artifactId>liberty-maven-plugin</artifactId>
+                <configuration>
+                    <libertyRuntimeVersion>22.0.0.9</libertyRuntimeVersion>
+                </configuration>
             </plugin>
         </plugins>
     </build>
