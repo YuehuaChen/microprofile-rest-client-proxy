@@ -18,15 +18,21 @@ public class HttpBinResource {
         Authenticator.setDefault(new Authenticator() {
             @Override
             protected PasswordAuthentication getPasswordAuthentication() {
-                if(RequestorType.PROXY.equals(getRequestorType())) {
+                if(RequestorType.PROXY.equals(getRequestorType()) && "http".equalsIgnoreCase(getRequestingProtocol())) {
                     return new PasswordAuthentication("test_user", "T0pS3cr3t".toCharArray());
                 }
                 return null;
             }
         });
         HttpBinService service = RestClientBuilder.newBuilder()
+//                .baseUri(URI.create("https://dsrv.eservicet-drv.de/komzfdr-api-war"))
                 .baseUri(URI.create("https://httpbin.org"))
-                .proxyAddress("ec2-35-180-92-16.eu-west-3.compute.amazonaws.com", 3128)
+//                .property("com.ibm.ws.jaxrs.client.proxy.username", "test_user")
+//                .property("com.ibm.ws.jaxrs.client.proxy.password", "T0pS3cr3t")
+//                .property("com.ibm.ws.jaxrs.client.proxy.host", "ec2-13-38-36-150.eu-west-3.compute.amazonaws.com")
+//                .property("com.ibm.ws.jaxrs.client.proxy.port", "3128")
+                .proxyAddress("ec2-13-38-36-150.eu-west-3.compute.amazonaws.com", 3128)
+                .register(LoggingFilter.class)
                 .build(HttpBinService.class);
         return service.getRequest("1");
     }

@@ -3,7 +3,7 @@
 
     <!-- Enable features -->
     <featureManager>
-        <feature>microProfile-4.0</feature>
+        <feature>microProfile-4.1</feature>
     </featureManager>
 
     <!-- This template enables security. To get the full use of all the capabilities, a keystore and user registry are required. -->
@@ -38,4 +38,6 @@
 
     <!-- Default SSL configuration enables trust for default certificates from the Java runtime -->
     <ssl id="defaultSSLConfig" trustDefaultCerts="true" />
+
+    <logging consoleLogLevel="INFO" />
 </server>
