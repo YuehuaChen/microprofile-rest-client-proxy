@@ -1,0 +1,4 @@
+-Djava.security.krb5.conf=krb5.conf
+-Djava.security.auth.login.config=login.conf
+-Djavax.security.auth.useSubjectCredsOnly=false
+-Dsun.security.krb5.debug=true
