@@ -21,6 +21,8 @@ public class NumberConversionResource {
 
     @PostConstruct
     public void init() {
+        String jaasConfigFile = System.getProperty("java.security.auth.login.config");
+        System.out.println("Jaas Config: " + jaasConfigFile);
         ProxySelector.setDefault(new MyProxySelector());
         Authenticator.setDefault(new Authenticator() {
             @Override

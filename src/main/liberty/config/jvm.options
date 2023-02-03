@@ -1,4 +1,6 @@
--Djava.security.krb5.conf=krb5.conf
--Djava.security.auth.login.config=login.conf
 -Djavax.security.auth.useSubjectCredsOnly=false
 -Dsun.security.krb5.debug=true
+-Dsun.security.jgss.debug=true
+-Dsun.security.spnego.debug=true
+-Djava.security.debug=configfile,configparser,gssloginconfig
+-Duser.language=en
